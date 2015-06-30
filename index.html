@@ -1,0 +1,151 @@
+<html contenteditable="">
+<head>
+<title> Text Editor </title>
+<link rel="shortcut icon" href="path2.png" type="image/x-icon" />
+<meta charset = "utf-8"> 
+<meta http-equiv="content-type" content="text/html; charset=WINDOWS-1252" >
+<meta name = "viewport" content = "width=device-width, initial-scale =1"> 
+<link rel = "stylesheet" href = "http://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/darkly/bootstrap.min.css"> 
+<link href="http://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet" type="text/css">
+<script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<style type = "text/css"> 
+body 
+{
+	font: 400 20px/1 'Berkshire Swash', Helvetica, sans-serif;
+    color: white;
+    text-shadow: 0px 0px 1px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
+
+}
+
+.already
+{
+	width: 100%;
+	text-align: center;
+	font-weight:bolder; 
+	font-size:50px;
+}
+
+.pp
+{
+	margin-top:-33px;
+}
+
+hr
+{
+	box-shadow:white 0px 0px 2px;
+}
+
+.time
+{
+	font-weight:bold;
+}
+#loader{
+ z-index:999999;
+ display:block;
+ position:fixed;
+ top:0;
+ left:0;
+ width:100%;
+ height:100%;
+ background:url(page-loader.gif) 50% 50% no-repeat #cccccc;
+}
+
+</style>
+
+<script type = "text/javascript">
+
+function O(i) 
+
+{
+
+	return typeof i == 'object' ? i : document.getElementById(i) 
+
+}
+
+function S(i) 
+
+{
+
+	return O(i).style   
+
+}
+
+function C(i) 
+
+{
+
+	return document.getElementsByClassName(i)  
+	                  
+}
+
+</script>
+
+</head>
+
+<body>
+
+	<div id="loader"></div>
+
+<div class = "container">
+
+<div class = "already">Text Editor</div>
+
+<big><b><hr class = "hr"></b></big>
+
+<p align="left"><span class="time" id='time'>00:00:00</span></p>
+
+<p class = "pp" align="right"> 
+
+<script type="text/javascript">
+
+var currentTime = new Date()
+
+var day = currentTime.getDate();
+
+var month = currentTime.getMonth() + 1;
+
+var year = currentTime.getFullYear();
+
+document.write(day + "/" + month + "/" + year);
+
+</script>
+
+</p>
+
+ <script>
+
+      setInterval("showtime(O('time'))", 1000)
+
+      function showtime(object)
+
+      {
+
+        var date = new Date()
+
+        object.innerHTML = date.toTimeString().substr(0,8)
+
+      }
+
+    </script>
+
+<script>
+
+ $(window).load(function(){
+
+ $("#loader").fadeOut("slow");
+
+ });
+
+ </script>
+
+<big><b><hr class = "hr"></b></big>
+
+<br>
+
+<br>
+
+</div>
+
+</body>
+
+</html>
